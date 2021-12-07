@@ -50,8 +50,7 @@ instance.interceptors.response.use(
         authController.saveTokenPair(response.data.tokenPair);
 
         // do initial request
-        instance.request(err.config);
-        return;
+        return instance.request(err.config);
       } catch (error) {
         // refresh token expired
         if (
